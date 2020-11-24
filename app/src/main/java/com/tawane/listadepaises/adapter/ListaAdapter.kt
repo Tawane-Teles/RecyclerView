@@ -9,8 +9,6 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.tawane.listadepaises.R
-import com.tihasg.mycatslist.R
-import kotlinx.android.synthetic.main.content_lista.view.*
 
 class ListaAdapter(nameList: List<String>, private var ctx: Context) :
     RecyclerView.Adapter<ListaAdapter.ViewHolder>() {
@@ -22,9 +20,9 @@ class ListaAdapter(nameList: List<String>, private var ctx: Context) :
     }
 
     // Aqui é onde o viewholder é criado a partir do layout
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(ctx).inflate(R.layout.content_lista, parent, false)
-        return RecyclerView.ViewHolder(view)
+        return ViewHolder(view)
     }
 
     // Nessa parte é onde se modifica o item do viewholder
@@ -50,6 +48,9 @@ class ListaAdapter(nameList: List<String>, private var ctx: Context) :
         if (name == ctx.resources.getString(R.string.pais_quatro)) {
             holder.name.setTextColor(ContextCompat.getColor(ctx, R.color.blue))
             holder.imagem.setBackgroundResource(R.drawable.img_franca)
+        }
+
+
     }
 
     // Devolve quantidade de itens do nameList
@@ -60,6 +61,6 @@ class ListaAdapter(nameList: List<String>, private var ctx: Context) :
     // Aqui é a criação dos itens do viewholder
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var name = view.findViewById<TextView>(R.id.img_primeirafrase)!!
-        var imagem = view.findViewById<ImageView>()!!
+        var imagem = view.findViewById<ImageView>(R.id.img_mapamundi)!!
     }
 }

@@ -5,12 +5,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.tawane.listadepaises.adapter.ListaAdapter
 
 class MainActivity : AppCompatActivity() {
 
     var nameList = ArrayList<String>()
-    var listaAdapter: MainActivity? = null
+    var listaAdapter: ListaAdapter? = null
     var linearLayoutManager: LinearLayoutManager? = null
+    var list:RecyclerView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,10 +22,6 @@ class MainActivity : AppCompatActivity() {
         initView()
         getCats()
 
-        btnInsert.setOnClickListener {
-            val intent = Intent(this, NameActivity::class.java)
-            startActivityForResult(intent, 1)
-        }
     }
 
     override fun onResume() {
@@ -31,16 +30,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initView() {
+        list = findViewById(R.id.id_recyclerview)
         listaAdapter = ListaAdapter(nameList, this)
         linearLayoutManager = LinearLayoutManager(this)
-        recyclerview.layoutManager = linearLayoutManager
-        recyclerview.adapter = listaAdapter
+        list?.layoutManager = linearLayoutManager
+        list?.adapter = listaAdapter
     }
 
     // setando no adapter os gatos
     private fun getCats() {
-        nameList.add(getString(R.string.cat1))
-        nameList.add(getString(R.string.cat2))
+        nameList.add(getString(R.string.pais_um))
+        nameList.add(getString(R.string.pais_dois))
+        nameList.add(getString(R.string.pais_tres))
+        nameList.add(getString(R.string.pais_quatro))
     }
 
     //Buscando os gastos que inseriou na tela Name
