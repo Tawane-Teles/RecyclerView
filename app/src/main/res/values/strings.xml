@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Lista de Paises</string>
+    <string name="essa_imagem_e_a_primeira_do_recycler">Essa imagem e a primeira do recycler</string>
+    <string name="essa_e_a_primeira_fase">Essa e a primeira fase</string>
+    <string name="meus_pa_ses_preferidos">Meus Países Preferidos</string>
+    <string name="pais_um">Brasil</string>
+    <string name="pais_dois">Estados Unidos</string>
+    <string name="pais_tres">Canadá</string>
+    <string name="pais_quatro">França</string>
 </resources>

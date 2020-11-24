@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#D6AEAE">
+
+    <ImageView
+        android:id="@+id/img_mapamundi"
+        android:layout_width="wrap_content"
+        android:layout_height="238dp"
+        android:background="@drawable/img_mapamundi"
+        android:contentDescription="@string/essa_imagem_e_a_primeira_do_recycler"
+        android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/img_primeirafrase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/essa_e_a_primeira_fase"
+        android:fontFamily="@font/wellfleet"
+        android:text="@string/meus_pa_ses_preferidos"
+        android:textColor="#8A4242"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_mapamundi" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
